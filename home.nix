@@ -8,7 +8,15 @@
   programs.bash = {
 	enable = true;
 	shellAliases = {
-	test = "echo hello";
+	nrs = "sudo nixos-rebuild switch --impure --flake ~/snow";
+	nrdc = "sudo nixos-rebuild dry-clean --impure --flake ~/snow";
+        nixconfig = "sudo vim ~/snow/configuration.nix";
+	homeconfig = "vim ~/snow/home.nix";
 	};
 	};
+
+  home.packages = with pkgs; [
+	bat
+	];
+
 } 

@@ -62,7 +62,6 @@ in
    vlc
    yazi
    imv
-   bat
  ];
 
  fonts.packages = with pkgs; [
