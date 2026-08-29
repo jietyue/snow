@@ -8,7 +8,7 @@
   programs.bash = {
 	enable = true;
 	shellAliases = {
-	test = "echo hello"
+	test = "echo hello";
 	};
 	};
 } 
