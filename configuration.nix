@@ -1,11 +1,19 @@
 { config, lib, pkgs, ... }:
-
+let
+    home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz";
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
+      (import "${home-manager}/nixos")
     ];
 	
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "backup";
+  home-manager.users.jietyue = import ./home.nix;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
@@ -79,16 +87,6 @@
 	};
 	};	
 
-  programs.bash = {
-  	enable = true;
-	shellAliases = {
-	nixconfig = "sudo nvim /etc/nixos/configuration.nix";
-	nrs = "sudo nixos-rebuild switch";
-	nrb = "sudo nixos-rebuild boot";
-	shutd = "sudo shutdown 0";
-	reboot = "sudo reboot";
-	};
-        };
   
   programs.hyprland = {
   	enable = true;
