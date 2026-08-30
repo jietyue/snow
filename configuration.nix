@@ -46,22 +46,12 @@ in
    ];
  };
 
- environment.systemPackages = with pkgs; [
-   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+ environment.systemPackages = with pkgs; [ 
    wget
-   neovim
-   git
-   alacritty
-   hyfetch
-   kitty
    hyprland
    hyprlock
    hyprpaper
-   rofi
    quickshell
-   vlc
-   yazi
-   imv
  ];
 
  fonts.packages = with pkgs; [

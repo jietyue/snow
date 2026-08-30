@@ -16,7 +16,16 @@
 	};
 
   home.packages = with pkgs; [
+	git
 	bat
+	hyfetch
+	neovim
+	vlc
+	yazi
+	imv
+	rofi
+	alacritty
+	vim
 	];
 
 } 
