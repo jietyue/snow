@@ -26,6 +26,7 @@
 	rofi
 	alacritty
 	vim
+	kitty
 	];
 
 } 

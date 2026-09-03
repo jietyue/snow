@@ -65,13 +65,14 @@ in
   mplus-outline-fonts.githubRelease
   dina-font
   proggyfonts
+  vista-fonts
 ];
 
   services.greetd = {
 	enable = true;
 	settings = {
 		default_session = {
-		command = "start-hyprland";
+		command = "start-hyprland -c ~/snow/dotfiles/hypr/hyprland.lua";
 		user = "jietyue";
 		};
 	};

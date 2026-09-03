@@ -39,7 +39,7 @@ hl.workspace_rule({
 ---------------------
 
 -- Set programs that you use
-local terminal    = "alacritty"
+local terminal    = "alacritty --config-file ~/snow/dotfiles/alacritty/alacritty.toml"
 local fileManager = "dolphin"
 local menu        = "rofi -show drun"
 
@@ -55,7 +55,7 @@ local menu        = "rofi -show drun"
 hl.on("hyprland.start", function () 
 --   hl.exec_cmd(terminal)
      hl.exec_cmd("hyprctl dispatch focusmonitor DP-1")
-     hl.exec_cmd("qs & hyprpaper & hyprlock")
+     hl.exec_cmd("qs -c ~/snow/dotfiles/quickshell & hyprpaper -c ~/snow/dotfiles/hypr/hyprpaper.conf & hyprlock -c ~/snow/dotfiles/hypr/hyprlock.conf")
 end)
 
 
