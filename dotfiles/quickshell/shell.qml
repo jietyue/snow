@@ -9,7 +9,7 @@ ShellRoot {
     id: root
 
     // Theme colors
-    property color colBg: "#000000"
+    property color colBg: "transparent"
     property color colFg: "#a9b1d6"
     property color colMuted: "#444b6a"
     property color colWhite: "#ffffff"
@@ -19,8 +19,8 @@ ShellRoot {
     property color colBlue: "#7aa2f7"
 
     // Font
-    property string fontFamily: "JetBrainsMono Nerd Font"
-    property int fontSize: 14
+    property string fontFamily: "Consolas"
+    property int fontSize: 15
 
     // System info properties
     property string kernelVersion: "Linux"
@@ -373,7 +373,7 @@ ShellRoot {
 
                     Text {
                         id: clockText
-                        text: Qt.formatDateTime(new Date(), "dd/MM/yyyy | HH:mm")
+                        text: Qt.formatDateTime(new Date(), "dd/MM/yyyy HH:mm")
                         color: root.colWhite
                         font.pixelSize: root.fontSize
                         font.family: root.fontFamily
@@ -384,7 +384,7 @@ ShellRoot {
                             interval: 1000
                             running: true
                             repeat: true
-                            onTriggered: clockText.text = Qt.formatDateTime(new Date(), "dd/MM/yyyy | HH:mm")
+                            onTriggered: clockText.text = Qt.formatDateTime(new Date(), "dd/MM/yyyy HH:mm")
                         }
                     }
 

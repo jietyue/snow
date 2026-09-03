@@ -98,10 +98,10 @@ hl.config({
         gaps_in  = 5,
         gaps_out = 5,
 
-        border_size = 1,
+        border_size = 2,
 
         col = {
-            active_border   = "rgba(43ff64d9)",
+	    active_border   = { colors = {"rgba(162565ff)", "rgba(769fd4ff)"}, angle = 45 },
             inactive_border = "rgba(595959aa)",
         },
 
@@ -138,7 +138,7 @@ hl.config({
     },
 
     animations = {
-        enabled = true,
+        enabled = false,
     },
 })
 
