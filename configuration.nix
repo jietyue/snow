@@ -72,7 +72,7 @@ in
 	enable = true;
 	settings = {
 		default_session = {
-		command = "start-hyprland -c ~/snow/dotfiles/hypr/hyprland.lua";
+		command = "start-hyprland -- -c /home/jietyue/snow/dotfiles/hypr/hyprland.lua";
 		user = "jietyue";
 		};
 	};

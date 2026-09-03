@@ -13,6 +13,9 @@
         nixconfig = "sudo vim ~/snow/configuration.nix";
 	homeconfig = "vim ~/snow/home.nix";
 	};
+	initExtra = ''
+	export PS1='\[\e[38;5;26m\]\u\[\e[0m\] in \[\e[38;5;33m\]\w\[\e[0m\] \\$ '
+	'';
 	};
 
   home.packages = with pkgs; [
