@@ -216,7 +216,7 @@ ShellRoot {
 
                         Image {
                             anchors.fill: parent
-                            source: "file:///home/jietyue/.config/quickshell/icons/NixOS.png"
+                            source: "file:///home/jietyue/snow/dotfiles/quickshell/icons/rodion_icon.png"
                             fillMode: Image.PreserveAspectFit
                         }
                     }
