@@ -4,8 +4,6 @@
   home.username = "jietyue";
   home.homeDirectory = "/home/jietyue";
   home.stateVersion = "26.05";
-  
-  programs.steam.enable = true;
 	
   programs.bash = {
 	enable = true;

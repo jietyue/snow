@@ -86,6 +86,7 @@ in
   programs.thunar.enable = true;
   services.openssh.enable = true;
   programs.firefox.enable = true;
+  programs.steam.enable = true;
   system.stateVersion = "26.05"; # Did you read the comment
 
 }
