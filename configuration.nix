@@ -66,6 +66,9 @@ in
   dina-font
   proggyfonts
   vista-fonts
+  lilex
+  iosevka
+  material-symbols
 ];
 
   services.greetd = {

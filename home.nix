@@ -30,6 +30,7 @@
 	alacritty
 	vim
 	kitty
+	vscode
 	];
 
 } 
