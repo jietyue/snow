@@ -11,13 +11,12 @@ Rectangle {
 
     implicitWidth: row.implicitWidth + 22
     implicitHeight: 33
-    radius: height / 2
-    color: "#04142c"
+    color: "#1C202B"
 
     RowLayout {
         id: row
         anchors.centerIn: parent
-        spacing: 8
+        spacing: 7
 
         Text {
             text: root.icon
