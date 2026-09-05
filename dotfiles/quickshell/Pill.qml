@@ -22,7 +22,7 @@ Rectangle {
         Text {
             text: root.icon
             color: root.iconColor
-            font.family: "Material Symbols Rounded"
+            font.family: "Iosevka"
             font.pixelSize: 16
         }
 
