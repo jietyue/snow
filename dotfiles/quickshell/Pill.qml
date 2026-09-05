@@ -22,14 +22,14 @@ Rectangle {
         Text {
             text: root.icon
             color: root.iconColor
-            font.family: "Iosevka"
+            font.family: "Lilex"
             font.pixelSize: 16
         }
 
         Text {
             text: root.label
             color: "#ffffff"
-            font.family: "Iosevka"
+            font.family: "Lilex"
             font.pixelSize: 16
             elide: Text.ElideRight
             Layout.maximumWidth: root.maxLabelWidth

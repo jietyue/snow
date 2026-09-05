@@ -2,9 +2,10 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 
+import Quickshell.Services.Mpris
+
 ShellRoot {
     Variants {
-        // see Variants for details
         model: Quickshell.screens
 
         PanelWindow {
@@ -12,9 +13,18 @@ ShellRoot {
             property var modelData 
             screen: modelData
             
-            anchors {top: true; left: true; right: true }
+            anchors { top: true; left: true; right: true }
+            margins { top: 11}
             implicitHeight: 33
             color: "transparent"
+
+            // --- Media Controller Fix ---
+            // 1. Safely extract the first acvitive player from the array wrapper using [0]
+            readonly property var activePlayer: Mpris.players.values.length > 0 ? Mpris.players.values[0] : null
+            
+            // 2. Safely read Quickshell's built-in player properties
+            readonly property bool isPlaying: activePlayer ? activePlayer.isPlaying : false
+            readonly property string trackTitle: activePlayer ? activePlayer.trackTitle : ""
 
             Poller {
                 id: clock
@@ -28,18 +38,25 @@ ShellRoot {
                 interval: 1000
             }
 
-            // battery
-        /* Poller {
-                id: bat
-                command: "cat /sys/class/power_supply/BAT1/capacity"
-                interval: 30000
-            } 
-            */ 
-
             Poller {
                 id: net
                 command: "nmcli -t -f NAME connection show --active | head -n1"
                 interval: 5000
+            }
+
+            RowLayout {
+                anchors.left: parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.leftMargin: 14
+                spacing: 8
+
+                Pill { 
+                    visible: bar.activePlayer !== null && bar.trackTitle !== ""
+                    icon: "" 
+                    label: bar.trackTitle
+                    iconColor: "#2e2825" 
+                }
+
             }
             
             RowLayout {
@@ -47,9 +64,12 @@ ShellRoot {
                 anchors.centerIn: parent
                 spacing: 8
 
-                Pill { icon: ""; label: clock.value; iconColor: "#ffffff"}
+                // SoundCloud / Music Pill
+                // Displays whenever any player is tracked by MPRIS
 
-                
+
+                Pill { icon: ""; label: clock.value; iconColor: "#ffffff"}
+                Workspaces {}
             }
 
             RowLayout {

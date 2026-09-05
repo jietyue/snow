@@ -31,6 +31,7 @@
 	vim
 	kitty
 	vscode
+	playerctl
 	];
 
 } 
