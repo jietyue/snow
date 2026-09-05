@@ -78,9 +78,8 @@ ShellRoot {
                 anchors.rightMargin: 14
                 spacing: 8
 
-                Pill { icon: ""; label: vol.value + "%"; iconColor: "#ffffff"}
+                Pill { icon: ""; label: "Vol: " + vol.value + "%"; iconColor: "#ffffff"}
                 Pill { icon: ""; label: net.value; iconColor: "#ffffff"}
-                Pill { icon: ""; label: clock.value; iconColor: "#ffffff"}
             }
         }
     }

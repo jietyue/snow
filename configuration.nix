@@ -91,19 +91,11 @@ in
   services.mopidy = {
   enable = true;
   extensionPackages = [ pkgs.mopidy-soundcloud ];
-  
-  # Change 'configuration = '' ... '';' to 'settings = { ... };'
   settings = {
     soundcloud = {
       enabled = true;
-      auth_token = ""; # Put your actual token here
+      auth_token = "";  
     };
-    
-    # If you have other sections like [mpd] or [audio], add them like this:
-    # mpd = {
-    #   enabled = true;
-    #   hostname = "::";
-    # };
   };
 };
 

@@ -17,7 +17,7 @@ Rectangle {
     RowLayout {
         id: row
         anchors.centerIn: parent
-        spacing: 7
+        spacing: 8
 
         Text {
             text: root.icon

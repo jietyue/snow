@@ -98,10 +98,10 @@ hl.config({
         gaps_in  = 5,
         gaps_out = 5,
 
-        border_size = 2,
+        border_size = 4,
 
         col = {
-	    active_border   = { colors = {"rgba(162565ff)", "rgba(769fd4ff)"}, angle = 45 },
+	    active_border   = { colors = {"rgba(162565ff)", "rgba(769fd4ff)"}, angle = 180 },
             inactive_border = "rgba(595959aa)",
         },
 
@@ -123,7 +123,7 @@ hl.config({
         inactive_opacity = 1.0,
 
         shadow = {
-            enabled      = true,
+            enabled      = false,
             range        = 4,
             render_power = 3,
             color        = 0xee1a1a1a,
@@ -141,6 +141,8 @@ hl.config({
         enabled = false,
     },
 })
+
+
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })

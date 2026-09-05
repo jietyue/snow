@@ -10,26 +10,38 @@ Rectangle {
     color: "#04142c"
 
     RowLayout {
-    id: row
-    anchors.centerIn: parent
-    spacing: 8 
-    
-    Repeater {
-        model: Hyprland.workspaces
+        id: row
+        anchors.centerIn: parent
+        spacing: 10
 
-        Rectangle {
-            implicitWidth: modelData.active ? 11 : 6
-            implicitHeight: implicitWidth
-            radius: width / 2
-            color: modelData.active ? "transparent" : "#7ad9a8"
-            border.width: modelData.active ? 2 : 0
-            border.color: "#7ad9a8"
+        Repeater {
+            model: Hyprland.workspaces
 
-            Behavior on implicitWidth {
-                NumberAnimation { duration: 150; easing.type: Easing.OutCubic }
+            Text {
+                required property var modelData
+
+                text: modelData.id
+                color: modelData.active ? "#8196c7" : "#ffffff"
+
+                font.family: "Lilex"
+                font.pixelSize: modelData.active ? 17 : 15
+                font.bold: modelData.active
+
+                Layout.alignment: Qt.AlignVCenter
+
+                Behavior on font.pixelSize {
+                    NumberAnimation {
+                        duration: 150
+                        easing.type: Easing.OutCubic
+                    }
+                }
+
+                Behavior on color {
+                    ColorAnimation {
+                        duration: 150
+                    }
+                }
             }
         }
     }
-
-  } 
 }
