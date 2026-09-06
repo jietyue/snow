@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 import Quickshell.Services.Mpris
+import Quickshell.Hyprland
 
 ShellRoot {
     Variants {
@@ -13,9 +14,9 @@ ShellRoot {
             screen: modelData
             
             anchors { top: true; left: true; right: true }
-            margins { top: 5 }
+            margins { top: 0 }
             implicitHeight: 25
-            color: "transparent"
+            color: "#1C202B"
 
             readonly property var activePlayer: Mpris.players.values.length > 0 ? Mpris.players.values[0] : null
             readonly property bool isPlaying: activePlayer ? activePlayer.isPlaying : false
@@ -23,7 +24,7 @@ ShellRoot {
 
             Poller {
                 id: clock
-                command: "date +%H:%M"
+                command: "date +'%A, %B %d   %H %M'"
                 interval: 60000
             }
 
@@ -42,13 +43,15 @@ ShellRoot {
             RowLayout {
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
-                anchors.leftMargin: 14
-                spacing: 8
+                anchors.leftMargin: 0
+                spacing: -10
+
+                Workspaces {}
 
                 Pill { 
                     visible: bar.activePlayer !== null && bar.trackTitle !== ""
                     icon: "" 
-                    label: bar.trackTitle
+                    label: "Now Playing: " + bar.trackTitle
                     iconColor: "#2e2825" 
                 }
 
@@ -57,20 +60,26 @@ ShellRoot {
             RowLayout {
                 id: centerGroup
                 anchors.centerIn: parent
-                spacing: 8
+                spacing: 0
 
-                Pill { icon: ""; label: clock.value; iconColor: "#ffffff"}
-                Workspaces {}
+                Text {
+                    text: Hyprland.activeToplevel?.title ?? "No active window"
+                    color: "#ffffff"
+                    font.family: "Iosevka"
+                    font.pixelSize: 12
+                    
+                }
             }
 
             RowLayout {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
-                anchors.rightMargin: 14
-                spacing: 8
+                anchors.rightMargin: -5
+                spacing: -10
 
                 Pill { icon: ""; label: "Vol: " + vol.value + "%"; iconColor: "#ffffff"}
                 Pill { icon: ""; label: net.value; iconColor: "#ffffff"}
+                Pill { icon: ""; label: clock.value; iconColor: "#ffffff"}
             }
         }
     }

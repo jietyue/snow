@@ -10,8 +10,8 @@ Rectangle {
     property int maxLabelWidth: 400
 
     implicitWidth: row.implicitWidth + 22
-    implicitHeight: 33
-    color: "#1C202B"
+    implicitHeight: 25
+    color: "transparent"
 
     RowLayout {
         id: row
@@ -28,7 +28,7 @@ Rectangle {
         Text {
             text: root.label
             color: "#ffffff"
-            font.family: "Lilex"
+            font.family: "Iosevka"
             font.pixelSize: 16
             elide: Text.ElideRight
             Layout.maximumWidth: root.maxLabelWidth

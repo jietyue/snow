@@ -4,7 +4,7 @@ import QtQuick
 import QtQuick.Layouts
 
 Rectangle {
-    implicitWidth: row.implicitWidth + 22
+    implicitWidth: row.implicitWidth + 20
     implicitHeight: 33
     color: "#1C202B"
 
