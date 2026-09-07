@@ -48,12 +48,20 @@ ShellRoot {
 
                 Workspaces {}
 
-                Pill { 
+                    Text {
+                    text: Hyprland.activeToplevel?.title ?? "No active window"
+                    color: "#b1afaf"
+                    font.family: "Iosevka"
+                    font.pixelSize: 14
+                    
+                }
+
+              /*  Pill { 
                     visible: bar.activePlayer !== null && bar.trackTitle !== ""
                     icon: "equalizer" 
                     label: bar.trackTitle
                     iconColor: "#ffffff" 
-                }
+                } */ 
 
             }
             
@@ -62,13 +70,6 @@ ShellRoot {
                 anchors.centerIn: parent
                 spacing: 0
 
-                Text {
-                    text: Hyprland.activeToplevel?.title ?? "No active window"
-                    color: "#ffffff"
-                    font.family: "Iosevka"
-                    font.pixelSize: 12
-                    
-                }
             }
 
             RowLayout {
