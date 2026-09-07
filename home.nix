@@ -33,6 +33,7 @@
 	kitty
 	vscode
 	playerctl
+	cava
 	];
 
 } 
