@@ -21,7 +21,7 @@ Rectangle {
         Text {
             text: root.icon
             color: root.iconColor
-            font.family: "Lilex"
+            font.family: "Material Symbols Rounded"
             font.pixelSize: 16
         }
 
@@ -29,7 +29,7 @@ Rectangle {
             text: root.label
             color: "#ffffff"
             font.family: "Iosevka"
-            font.pixelSize: 16
+            font.pixelSize: 14
             elide: Text.ElideRight
             Layout.maximumWidth: root.maxLabelWidth
             visible: root.label !== ""

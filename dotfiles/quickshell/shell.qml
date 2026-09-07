@@ -24,7 +24,7 @@ ShellRoot {
 
             Poller {
                 id: clock
-                command: "date +'%A, %B %d   %H %M'"
+                command: "date +'%A, %B %d  %H %M'"
                 interval: 60000
             }
 
@@ -44,15 +44,15 @@ ShellRoot {
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.leftMargin: 0
-                spacing: -10
+                spacing: 0
 
                 Workspaces {}
 
                 Pill { 
                     visible: bar.activePlayer !== null && bar.trackTitle !== ""
-                    icon: "" 
-                    label: "Now Playing: " + bar.trackTitle
-                    iconColor: "#2e2825" 
+                    icon: "equalizer" 
+                    label: bar.trackTitle
+                    iconColor: "#ffffff" 
                 }
 
             }
@@ -75,11 +75,11 @@ ShellRoot {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.rightMargin: -5
-                spacing: -10
+                spacing: 0
 
-                Pill { icon: ""; label: "Vol: " + vol.value + "%"; iconColor: "#ffffff"}
-                Pill { icon: ""; label: net.value; iconColor: "#ffffff"}
-                Pill { icon: ""; label: clock.value; iconColor: "#ffffff"}
+                Pill { icon: "discover_tune"; label: vol.value + "%"; iconColor: "#ffffff"}
+                Pill { icon: "lan"; label: net.value; iconColor: "#ffffff"}
+                Pill { icon: "calendar_month"; label: clock.value; iconColor: "#ffffff"}
             }
         }
     }
