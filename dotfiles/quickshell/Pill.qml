@@ -27,7 +27,7 @@ Rectangle {
 
         Text {
             text: root.label
-            color: "#ffffff"
+            color: "#b1afaf"
             font.family: "Iosevka"
             font.pixelSize: 14
             elide: Text.ElideRight
