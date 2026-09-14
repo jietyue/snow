@@ -13,7 +13,7 @@ ShellRoot {
             property var modelData 
             screen: modelData
             
-            anchors { top: true; left: true; right: true }
+            anchors { bottom: true; left: true; right: true }
             margins { top: 0 }
             implicitHeight: 25
             color: "#1C202B"

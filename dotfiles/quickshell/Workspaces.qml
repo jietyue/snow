@@ -14,30 +14,19 @@ Rectangle {
         spacing: 10
 
         Repeater {
-            model: Hyprland.workspaces
+            model: 9
 
             Text {
-                required property var modelData
-
-                text: modelData.id
-                color: modelData.active ? "#8196c7" : "#ffffff"
-
-                font.family: "Lilex"
-                font.pixelSize: modelData.active ? 17 : 15
-                font.bold: modelData.active
-
-                Layout.alignment: Qt.AlignVCenter
-
-                Behavior on font.pixelSize {
-                    NumberAnimation {
-                        duration: 150
-                        easing.type: Easing.OutCubic
-                    }
-                }
+                property var ws: Hyprland.workspaces.values.find(w => w.id === index + 1)
+                property bool isActive: Hyprland.focusedWorkspace?.id === (index + 1)
+                text: index + 1
+                color: isActive ? "#baa14e" : (ws ? "#6b8fdc" : "#b1afaf")
+                font { family: "Iosevka" ; pixelSize: 14;}
+            
 
                 Behavior on color {
                     ColorAnimation {
-                        duration: 150
+                        duration: 0
                     }
                 }
             }
