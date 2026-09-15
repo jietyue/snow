@@ -1,3 +1,3 @@
-# config-and-dotfiles
+# snow
 my nixos configuration files and my dotfiles 
 
