@@ -13,10 +13,10 @@ ShellRoot {
             property var modelData 
             screen: modelData
             
-            anchors { bottom: true; left: true; right: true }
+            anchors { top: true; left: true; right: true }
             margins { top: 0 }
             implicitHeight: 25
-            color: "#1C202B"
+            color: "transparent"
 
             readonly property var activePlayer: Mpris.players.values.length > 0 ? Mpris.players.values[0] : null
             readonly property bool isPlaying: activePlayer ? activePlayer.isPlaying : false
@@ -48,13 +48,13 @@ ShellRoot {
 
                 Workspaces {}
 
-                    Text {
+               /*     Text {
                     text: Hyprland.activeToplevel?.title ?? "No active window"
-                    color: "#b1afaf"
+                    color: "#ffffff"
                     font.family: "Iosevka"
                     font.pixelSize: 14
                     
-                }
+                } */
 
               /*  Pill { 
                     visible: bar.activePlayer !== null && bar.trackTitle !== ""

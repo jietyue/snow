@@ -11,7 +11,7 @@ Rectangle {
 
     implicitWidth: row.implicitWidth + 22
     implicitHeight: 25
-    color: "transparent"
+    color: "#111111"
 
     RowLayout {
         id: row
