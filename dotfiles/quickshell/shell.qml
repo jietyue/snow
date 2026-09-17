@@ -16,7 +16,7 @@ ShellRoot {
             anchors { top: true; left: true; right: true }
             margins { top: 0 }
             implicitHeight: 25
-            color: "transparent"
+            color: "#111111"
 
             readonly property var activePlayer: Mpris.players.values.length > 0 ? Mpris.players.values[0] : null
             readonly property bool isPlaying: activePlayer ? activePlayer.isPlaying : false
@@ -24,7 +24,7 @@ ShellRoot {
 
             Poller {
                 id: clock
-                command: "date +'%A, %B %d  %H %M'"
+                command: "date +'%Y-%m-%d  %H:%M'"
                 interval: 60000
             }
 
