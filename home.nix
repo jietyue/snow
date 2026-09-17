@@ -15,7 +15,7 @@
 	nf = "neowofetch --config  ~/snow/dotfiles/neofetch/config.conf";
 	};
 	initExtra = ''
-	export PS1='\[\e[38;5;26m\]\u\[\e[0m\] in \[\e[38;5;33m\]\w\[\e[0m\] \\$ '
+	export PS1='\[\e[97m\]\u\[\e[37m\]@\[\e[0m\]\h \w \[\e[37m\]\\$\[\e[0m\] '
 	'';
 	};
 
@@ -34,6 +34,7 @@
 	vscode
 	playerctl
 	cava
+	cachix
 	];
 
 } 
