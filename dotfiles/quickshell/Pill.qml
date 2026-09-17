@@ -11,7 +11,7 @@ Rectangle {
 
     implicitWidth: row.implicitWidth + 22
     implicitHeight: 25
-    color: "#111111"
+    color: "transparent"
 
     RowLayout {
         id: row
@@ -28,7 +28,7 @@ Rectangle {
         Text {
             text: root.label
             color: "#b1afaf"
-            font.family: "Iosevka"
+            font.family: "Lilex"
             font.pixelSize: 14
             elide: Text.ElideRight
             Layout.maximumWidth: root.maxLabelWidth

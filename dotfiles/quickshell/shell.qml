@@ -24,14 +24,14 @@ ShellRoot {
 
             Poller {
                 id: clock
-                command: "date +'%Y-%m-%d  %H:%M'"
+                command: "date +'%A, %B %d   %H:%M'"
                 interval: 60000
             }
 
             Poller {
                 id: vol
                 command: "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf\"%d\", $2*100}'"
-                interval: 1000
+                interval: 100
             }
 
             Poller {
@@ -48,13 +48,13 @@ ShellRoot {
 
                 Workspaces {}
 
-               /*     Text {
-                    text: Hyprland.activeToplevel?.title ?? "No active window"
+                   Text {
+                    text: Hyprland.activeToplevel?.title ?? ""
                     color: "#ffffff"
                     font.family: "Iosevka"
                     font.pixelSize: 14
                     
-                } */
+                } 
 
               /*  Pill { 
                     visible: bar.activePlayer !== null && bar.trackTitle !== ""
@@ -75,12 +75,12 @@ ShellRoot {
             RowLayout {
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
-                anchors.rightMargin: -5
-                spacing: 0
+                anchors.rightMargin: 0
+                spacing: -10
 
-                Pill { icon: "discover_tune"; label: vol.value + "%"; iconColor: "#ffffff"}
-                Pill { icon: "lan"; label: net.value; iconColor: "#ffffff"}
-                Pill { icon: "calendar_month"; label: clock.value; iconColor: "#ffffff"}
+                Pill { icon: ""; label: "vol: " + vol.value + "%"; iconColor: "#ffffff"}
+                Pill { icon: ""; label: net.value; iconColor: "#ffffff"}
+                Pill { icon: ""; label: clock.value; iconColor: "#ffffff"}
             }
         }
     }
