@@ -35,6 +35,8 @@
 	playerctl
 	cava
 	cachix
+	qutebrowser
+	rmpc
 	];
 
 } 
