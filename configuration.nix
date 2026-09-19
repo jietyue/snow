@@ -17,7 +17,14 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
+  services.displayManager.ly.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+    services.xserver.windowManager.dwm = {
+	enable = true;
+	package = pkgs.dwm.overrideAttrs {
+	src = /home/jietyue/dwm;
+	};
+	};
   hardware.nvidia = {
   	package = config.boot.kernelPackages.nvidiaPackages.stable;
 	modesetting.enable = true;
@@ -52,6 +59,8 @@ in
    hyprlock
    hyprpaper
    quickshell
+   st
+   xinit
  ];
 
  fonts.packages = with pkgs; [
@@ -70,15 +79,15 @@ in
   material-symbols
 ];
 
-  services.greetd = {
-	enable = true;
-	settings = {
-		default_session = {
-		command = "start-hyprland -- -c /home/jietyue/snow/dotfiles/hypr/hyprland.lua";
-		user = "jietyue";
-		};
-	};
-	};	
+ # services.greetd = {
+ #	enable = true;
+ #	settings = {
+ #		default_session = {
+ #		command = "start-hyprland -- -c /home/jietyue/snow/dotfiles/hypr/hyprland.lua";
+ #		user = "jietyue";
+ #	 	};
+ #	};
+ #	};	
 
   
   programs.hyprland = {
