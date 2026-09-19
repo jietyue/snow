@@ -37,6 +37,7 @@
 	cachix
 	qutebrowser
 	rmpc
+	cmatrix
 	];
 
 } 
