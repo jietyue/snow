@@ -16,7 +16,7 @@ ShellRoot {
             anchors { top: true; left: true; right: true }
             margins { top: 0 }
             implicitHeight: 25
-            color: "#111111"
+            color: "transparent"
 
             readonly property var activePlayer: Mpris.players.values.length > 0 ? Mpris.players.values[0] : null
             readonly property bool isPlaying: activePlayer ? activePlayer.isPlaying : false
@@ -40,6 +40,18 @@ ShellRoot {
                 interval: 5000
             }
 
+            Poller {
+                id: mem
+                command: "free --mega | awk '/^Mem/ {print ($3)/1024}'| cut -c-4"
+                interval: 2000
+            }
+
+            Poller {
+                id: cpu
+                command: "awk '/cpu MHz/ {printf \"%.2f\\n\", $4/1000; exit}' /proc/cpuinfo"
+                interval: 2000
+            }            
+
             RowLayout {
                 anchors.left: parent.left
                 anchors.verticalCenter: parent.verticalCenter
@@ -48,7 +60,7 @@ ShellRoot {
 
                 Workspaces {}
 
-                   Text {
+                  /* Text {
                     text: Hyprland.activeToplevel?.title ?? ""
                     color: "#ffffff"
                     font.family: "Iosevka"
@@ -70,6 +82,11 @@ ShellRoot {
                 anchors.centerIn: parent
                 spacing: 0
 
+
+                Pill { icon: ""; label: vol.value + "%"; iconColor: "#ffffff"}
+                Pill { icon: ""; label: net.value; iconColor: "#ffffff"}
+                Pill { icon: ""; label: clock.value; iconColor: "#ffffff"}
+
             }
 
             RowLayout {
@@ -78,9 +95,11 @@ ShellRoot {
                 anchors.rightMargin: 0
                 spacing: -10
 
-                Pill { icon: ""; label: "vol: " + vol.value + "%"; iconColor: "#ffffff"}
+                Pill { icon: ""; label: cpu.value + "ghz"; iconColor: "#ffffff"}
+                Pill { icon: ""; label: mem.value + "g"; iconColor: "#ffffff"}
+                /* Pill { icon: ""; label: vol.value + "%"; iconColor: "#ffffff"}
                 Pill { icon: ""; label: net.value; iconColor: "#ffffff"}
-                Pill { icon: ""; label: clock.value; iconColor: "#ffffff"}
+                Pill { icon: ""; label: clock.value; iconColor: "#ffffff"} */
             }
         }
     }
