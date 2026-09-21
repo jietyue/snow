@@ -9,14 +9,14 @@ Rectangle {
     property color iconColor: "#0c0b41"
     property int maxLabelWidth: 400
 
-    implicitWidth: row.implicitWidth + 22
+    implicitWidth: row.implicitWidth + 5
     implicitHeight: 25
-    color: "#111111"
+    color: "#B3000000"
 
     RowLayout {
         id: row
         anchors.centerIn: parent
-        spacing: 7
+        spacing: 10
 
         Text {
             text: root.icon
@@ -27,7 +27,7 @@ Rectangle {
 
         Text {
             text: root.label
-            color: "#b1afaf"
+            color: "#685891"
             font.family: "Lilex"
             font.pixelSize: 14
             elide: Text.ElideRight
